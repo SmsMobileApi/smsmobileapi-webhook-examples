@@ -1,0 +1,15 @@
+{
+  "id": "cb762b66-7a2a-4ba2-af66-a331be9159a9",
+  "type": "whatsapp.voice.transcribed",
+  "api_version": "2026-09-22",
+  "created_at": "2026-09-23T14:25:08Z",
+  "occurred_at": "2026-09-23T14:25:00Z",
+  "data": {
+    "guid": "WA-GUID-3002",
+    "data_id": "WHATSAPP-DATA-ID-3002",
+    "from": "+15559876543",
+    "contact_name": "Jordan",
+    "transcript": "Please call me when the package is available.",
+    "duration_seconds": 6.8
+  }
+}
