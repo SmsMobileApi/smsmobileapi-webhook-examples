@@ -1,0 +1,15 @@
+{
+  "id": "7b48758f-9f9c-4f95-a32e-494c871e3e4c",
+  "type": "call.missed",
+  "api_version": "2026-09-22",
+  "created_at": "2026-09-23T13:10:02Z",
+  "occurred_at": "2026-09-23T13:10:00Z",
+  "data": {
+    "guid": "CALL-GUID-2001",
+    "number": "+15557654321",
+    "name": "Morgan",
+    "duration_seconds": 0,
+    "device_id": "support-phone-1",
+    "call_at": "2026-09-23 13:10:00"
+  }
+}
