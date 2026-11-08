@@ -2,7 +2,7 @@
 
 Production-oriented examples for receiving signed SMSMobileAPI events from real connected mobile phones.
 
-SMSMobileAPI turns a phone with its SIM and existing number into a programmable communication endpoint. Webhook V2 delivers SMS, call, WhatsApp and e-mail activity to your HTTPS application as structured JSON—without a polling loop.
+SMSMobileAPI turns a phone with its SIM and existing number into a programmable communication endpoint. Webhook V2 delivers SMS, call, WhatsApp, Telegram and e-mail activity to your HTTPS application as structured JSON—without a polling loop.
 
 > **Start here:** create an account, connect a mobile, then configure a destination in the [Webhook V2 dashboard](https://dashboard.smsmobileapi.com/webhook-v2/).
 
@@ -13,7 +13,7 @@ SMSMobileAPI turns a phone with its SIM and existing number into a programmable 
 - Constant-time signature comparison.
 - Idempotency handling for at-least-once delivery.
 - Examples in PHP, Python and Node.js.
-- Realistic fixtures for SMS, calls and WhatsApp.
+- Realistic fixtures for SMS, calls, WhatsApp and Telegram.
 - Guidance for retries, fast acknowledgements and secret rotation.
 
 ## Event catalogue
@@ -23,7 +23,10 @@ SMSMobileAPI turns a phone with its SIM and existing number into a programmable 
 | SMS | `sms.api.submitted`, `sms.sent`, `sms.failed`, `sms.received`, `sms.mobile.sent` |
 | Calls | `call.missed`, `call.incoming`, `call.outgoing` |
 | WhatsApp | `whatsapp.submitted`, `whatsapp.sent`, `whatsapp.failed`, `whatsapp.received`, `whatsapp.voice.transcribed` |
+| Telegram | `telegram.submitted`, `telegram.sent`, `telegram.failed`, `telegram.unknown`, `telegram.received` |
 | E-mail | `email.sent`, `email.received` |
+
+For Telegram, `submitted` means queued, `sent` means Telegram accepted the message, and `unknown` means the outcome cannot be confirmed. Check before retrying. `telegram.received` is emitted only for new private messages captured while reception is enabled in the dashboard; reception is off by default. A received event includes `contact_id` when available so your application can reply with the [Telegram API](https://smsmobileapi.com/doc-telegram/). Received file metadata is included, but file bytes are not.
 
 ## Delivery contract
 
